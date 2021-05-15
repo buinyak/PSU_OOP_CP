@@ -166,7 +166,7 @@
         "Entry"
         {
         "MsmKey" = "8:_2572C011EC9E5D1D9B7C24D794016550"
-        "OwnerKey" = "8:_AFD4FF59AC38D1AECD886FBB5C77BEBA"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -628,7 +628,7 @@
         "Entry"
         {
         "MsmKey" = "8:_AFD4FF59AC38D1AECD886FBB5C77BEBA"
-        "OwnerKey" = "8:_0EBF059A7800FDEFE4CFC78708BE9E88"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -940,12 +940,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1B9D2CD76E415D25FFCB3B315CB57379"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_DA7DFF043325440DB198589A26EF6FBE"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1031,6 +1025,18 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_91079C97803875DDE0E396CC239E6625"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_AFD4FF59AC38D1AECD886FBB5C77BEBA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_0EBF059A7800FDEFE4CFC78708BE9E88"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1699,6 +1705,12 @@
         "OwnerKey" = "8:_A7BD155DACE28B2294E58B163A71A3B8"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_1B9D2CD76E415D25FFCB3B315CB57379"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -1717,13 +1729,21 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\OOP_CP_INSTALLER.msi"
+        "OutputFilename" = "8:Release\\OOP_CP.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -1733,6 +1753,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -2453,11 +2481,11 @@
                 {
                     "_2572C011EC9E5D1D9B7C24D794016550"
                     {
-                    "Name" = "8:System.Buffers.dll"
+                    "Name" = "8:System.Buffers.DLL"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:System.Buffers.dll"
+            "SourcePath" = "8:System.Buffers.DLL"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_41DA2C695E914AB286C69D203E315C17"
@@ -4426,11 +4454,11 @@
                 {
                     "_AFD4FF59AC38D1AECD886FBB5C77BEBA"
                     {
-                    "Name" = "8:System.Memory.dll"
+                    "Name" = "8:System.Memory.DLL"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:System.Memory.dll"
+            "SourcePath" = "8:System.Memory.DLL"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_41DA2C695E914AB286C69D203E315C17"
@@ -5847,7 +5875,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:OOP_CP_INSTALLER"
+        "ProductName" = "8:OOP_CP"
         "ProductCode" = "8:{1545827E-D1AC-499E-9B50-F734BBEE7B91}"
         "PackageCode" = "8:{8B448B29-8498-498A-A289-00C9049C4838}"
         "UpgradeCode" = "8:{6490497E-8839-49DB-9B99-883BE621FA3A}"
@@ -5860,7 +5888,7 @@
         "Manufacturer" = "8:Default Company Name"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:OOP_CP_INSTALLER"
+        "Title" = "8:OOP_CP"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Буйняков Г.Э. 19ВП2"
         "Keywords" = "8:"
@@ -5873,7 +5901,7 @@
         "TargetPlatform" = "3:0"
         "PreBuildEvent" = "8:"
         "PostBuildEvent" = "8:"
-        "RunPostBuildEvent" = "3:0"
+        "RunPostBuildEvent" = "3:1"
         }
         "Registry"
         {
@@ -5971,7 +5999,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_50CF8E30778F4255B3F661BCCDA4A245"
             {
-            "Name" = "8:OOP_CP Installer"
+            "Name" = "8:OOP_CP"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -5985,7 +6013,7 @@
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_FF8E2CDF601E4D058CA1D0A62D4AC859"
             {
-            "Name" = "8:OOP_CP Installer"
+            "Name" = "8:OOP_CP"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"

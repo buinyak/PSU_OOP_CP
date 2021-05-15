@@ -1,0 +1,57 @@
+C:\Users\georg\Desktop\House\House\House\bin\Debug\House.exe.config
+C:\Users\georg\Desktop\House\House\House\bin\Debug\House.exe
+C:\Users\georg\Desktop\House\House\House\bin\Debug\House.pdb
+C:\Users\georg\Desktop\House\House\House\bin\Debug\Google.Protobuf.dll
+C:\Users\georg\Desktop\House\House\House\bin\Debug\Zstandard.Net.dll
+C:\Users\georg\Desktop\House\House\House\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\georg\Desktop\House\House\House\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\georg\Desktop\House\House\House\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\georg\Desktop\House\House\House\bin\Debug\Renci.SshNet.dll
+C:\Users\georg\Desktop\House\House\House\bin\Debug\System.Memory.dll
+C:\Users\georg\Desktop\House\House\House\bin\Debug\System.Buffers.dll
+C:\Users\georg\Desktop\House\House\House\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\georg\Desktop\House\House\House\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\georg\Desktop\House\House\House\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\georg\Desktop\House\House\House\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\georg\Desktop\House\House\House\bin\Debug\MySql.Data.xml
+C:\Users\georg\Desktop\House\House\House\obj\Debug\OOP_CP.csprojAssemblyReference.cache
+C:\Users\georg\Desktop\House\House\House\obj\Debug\House.exe.config
+C:\Users\georg\Desktop\House\House\House\obj\Debug\House.Form1.resources
+C:\Users\georg\Desktop\House\House\House\obj\Debug\House.Form2.resources
+C:\Users\georg\Desktop\House\House\House\obj\Debug\House.Properties.Resources.resources
+C:\Users\georg\Desktop\House\House\House\obj\Debug\OOP_CP.csproj.GenerateResource.cache
+C:\Users\georg\Desktop\House\House\House\obj\Debug\OOP_CP.csproj.CoreCompileInputs.cache
+C:\Users\georg\Desktop\House\House\House\obj\Debug\OOP_CP.csproj.CopyComplete
+C:\Users\georg\Desktop\House\House\House\obj\Debug\House.exe
+C:\Users\georg\Desktop\House\House\House\obj\Debug\House.pdb
+C:\Users\georg\Desktop\House\House\House\obj\Debug\House.Form3.resources
+C:\Users\georg\Desktop\House\House\House\bin\Debug\MySqlBackup.dll
+C:\Users\georg\Desktop\House\House\House\obj\Debug\House.Form4.resources
+C:\Users\georg\Desktop\Новая папка\House\bin\Debug\House.exe.config
+C:\Users\georg\Desktop\Новая папка\House\bin\Debug\House.exe
+C:\Users\georg\Desktop\Новая папка\House\bin\Debug\House.pdb
+C:\Users\georg\Desktop\Новая папка\House\bin\Debug\Google.Protobuf.dll
+C:\Users\georg\Desktop\Новая папка\House\bin\Debug\Zstandard.Net.dll
+C:\Users\georg\Desktop\Новая папка\House\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\georg\Desktop\Новая папка\House\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\georg\Desktop\Новая папка\House\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\georg\Desktop\Новая папка\House\bin\Debug\Renci.SshNet.dll
+C:\Users\georg\Desktop\Новая папка\House\bin\Debug\System.Memory.dll
+C:\Users\georg\Desktop\Новая папка\House\bin\Debug\System.Buffers.dll
+C:\Users\georg\Desktop\Новая папка\House\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\georg\Desktop\Новая папка\House\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\georg\Desktop\Новая папка\House\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\georg\Desktop\Новая папка\House\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\georg\Desktop\Новая папка\House\bin\Debug\MySql.Data.xml
+C:\Users\georg\Desktop\Новая папка\House\obj\Debug\OOP_CP.csprojAssemblyReference.cache
+C:\Users\georg\Desktop\Новая папка\House\obj\Debug\House.exe.config
+C:\Users\georg\Desktop\Новая папка\House\obj\Debug\House.Form1.resources
+C:\Users\georg\Desktop\Новая папка\House\obj\Debug\House.Form2.resources
+C:\Users\georg\Desktop\Новая папка\House\obj\Debug\House.Form3.resources
+C:\Users\georg\Desktop\Новая папка\House\obj\Debug\House.Form4.resources
+C:\Users\georg\Desktop\Новая папка\House\obj\Debug\House.Properties.Resources.resources
+C:\Users\georg\Desktop\Новая папка\House\obj\Debug\OOP_CP.csproj.GenerateResource.cache
+C:\Users\georg\Desktop\Новая папка\House\obj\Debug\OOP_CP.csproj.CoreCompileInputs.cache
+C:\Users\georg\Desktop\Новая папка\House\obj\Debug\OOP_CP.csproj.CopyComplete
+C:\Users\georg\Desktop\Новая папка\House\obj\Debug\House.exe
+C:\Users\georg\Desktop\Новая папка\House\obj\Debug\House.pdb

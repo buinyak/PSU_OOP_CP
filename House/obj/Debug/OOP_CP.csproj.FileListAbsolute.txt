@@ -55,3 +55,31 @@ C:\Users\georg\Desktop\Новая папка\House\obj\Debug\OOP_CP.csproj.CoreC
 C:\Users\georg\Desktop\Новая папка\House\obj\Debug\OOP_CP.csproj.CopyComplete
 C:\Users\georg\Desktop\Новая папка\House\obj\Debug\House.exe
 C:\Users\georg\Desktop\Новая папка\House\obj\Debug\House.pdb
+E:\ВП\19ВП2\ООП\House_2\House\bin\Debug\House.exe.config
+E:\ВП\19ВП2\ООП\House_2\House\bin\Debug\House.exe
+E:\ВП\19ВП2\ООП\House_2\House\bin\Debug\House.pdb
+E:\ВП\19ВП2\ООП\House_2\House\bin\Debug\Google.Protobuf.dll
+E:\ВП\19ВП2\ООП\House_2\House\bin\Debug\Zstandard.Net.dll
+E:\ВП\19ВП2\ООП\House_2\House\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\ВП\19ВП2\ООП\House_2\House\bin\Debug\BouncyCastle.Crypto.dll
+E:\ВП\19ВП2\ООП\House_2\House\bin\Debug\Ubiety.Dns.Core.dll
+E:\ВП\19ВП2\ООП\House_2\House\bin\Debug\Renci.SshNet.dll
+E:\ВП\19ВП2\ООП\House_2\House\bin\Debug\System.Memory.dll
+E:\ВП\19ВП2\ООП\House_2\House\bin\Debug\System.Buffers.dll
+E:\ВП\19ВП2\ООП\House_2\House\bin\Debug\K4os.Compression.LZ4.dll
+E:\ВП\19ВП2\ООП\House_2\House\bin\Debug\K4os.Hash.xxHash.dll
+E:\ВП\19ВП2\ООП\House_2\House\bin\Debug\System.Numerics.Vectors.dll
+E:\ВП\19ВП2\ООП\House_2\House\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\ВП\19ВП2\ООП\House_2\House\bin\Debug\MySql.Data.xml
+E:\ВП\19ВП2\ООП\House_2\House\obj\Debug\OOP_CP.csprojAssemblyReference.cache
+E:\ВП\19ВП2\ООП\House_2\House\obj\Debug\House.exe.config
+E:\ВП\19ВП2\ООП\House_2\House\obj\Debug\House.Form1.resources
+E:\ВП\19ВП2\ООП\House_2\House\obj\Debug\House.Form2.resources
+E:\ВП\19ВП2\ООП\House_2\House\obj\Debug\House.Form3.resources
+E:\ВП\19ВП2\ООП\House_2\House\obj\Debug\House.Form4.resources
+E:\ВП\19ВП2\ООП\House_2\House\obj\Debug\House.Properties.Resources.resources
+E:\ВП\19ВП2\ООП\House_2\House\obj\Debug\OOP_CP.csproj.GenerateResource.cache
+E:\ВП\19ВП2\ООП\House_2\House\obj\Debug\OOP_CP.csproj.CoreCompileInputs.cache
+E:\ВП\19ВП2\ООП\House_2\House\obj\Debug\OOP_CP.csproj.CopyComplete
+E:\ВП\19ВП2\ООП\House_2\House\obj\Debug\House.exe
+E:\ВП\19ВП2\ООП\House_2\House\obj\Debug\House.pdb

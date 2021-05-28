@@ -18,32 +18,20 @@ namespace House
         {
             
             InitializeComponent();
-            database = scon;
-            constr = database + "Database=house;";
+            House.constr = scon;
             Text = "ООП КР Буйняков Г.Э. 19ВП2";
             progressBar1.Hide();
             checkDB();
         }
-
-        private string database;
-        private string constr;
-        private MySqlConnection mycon;
-        private MySqlCommand mycom;
-        public DataSet ds;
-        private string checked_column;
         public void checkDB()
         {
-            try
+            
+            if (House.isCreated())
             {
-                string request = "SHOW DATABASES LIKE 'house';";
-                mycon = new MySqlConnection(constr);
-                mycon.Open();
-                MySqlCommand cmd = new MySqlCommand(request, mycon);
-                cmd.ExecuteNonQuery();
-                mycon.Close();
                 settingsShow();
                 table_load();
-            }catch {
+            }else
+            {
                 settingsHide();
             }
         }
@@ -68,9 +56,7 @@ namespace House
                 heats[i] = rnd.Next(2000, 5000);
                 waters[i] = rnd.Next(200, 1000);
             }
-            mycon = new MySqlConnection(constr);
-            mycon.Open();
-            string request, name, surname, patronymic;
+            string name, surname, patronymic;
             int profit, utilities,rent, energy, heat, water;
             for (int i = 0; i < surnames.Length; i++)
             {
@@ -84,13 +70,10 @@ namespace House
                 utilities = utilitiess[rnd.Next(0, utilitiess.Length - 1)];
                 heat = heats[rnd.Next(0, heats.Length - 1)];
                 water = waters[rnd.Next(0, waters.Length - 1)];
-                request = String.Format("INSERT INTO house (surname,name,patronymic,profit,Rent,Enegry,Utilities,Heat,Water) VALUES ('{0}', '{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}')", surname, name, patronymic, profit, rent, energy, utilities, heat, water);
-                mycom = new MySqlCommand(request, mycon);
-                mycom.ExecuteNonQuery();
+                string[] ownerData = {surname, name, patronymic, Convert.ToString(profit), Convert.ToString(rent), Convert.ToString(energy), Convert.ToString(utilities), Convert.ToString(heat), Convert.ToString(water) };
+                House.insertOwner(ownerData);
                 progressBar1.PerformStep();
             } 
-            
-            mycon.Close();
 
         }
         public void settingsHide()
@@ -124,21 +107,8 @@ namespace House
             
             try
             {
-                string request = "CREATE DATABASE HOUSE CHARACTER SET 'cp1251'";
-                mycon = new MySqlConnection(database);
-                mycon.Open();
-                mycom = new MySqlCommand(request, mycon);
-                mycom.ExecuteNonQuery();
-                mycon.Close();
-
-                request = "CREATE TABLE House(id INT NOT NULL primary key AUTO_INCREMENT,surname varchar(255),name varchar(255),patronymic varchar(255),profit varchar(255),Rent varchar(255),Enegry varchar(255),Utilities varchar(255),Heat varchar(255),Water varchar(255)); ";
-                mycon = new MySqlConnection(constr);
-                mycon.Open();
-                MySqlDataAdapter ms_data = new MySqlDataAdapter(request, constr);
-                DataTable table = new DataTable();
-                ms_data.Fill(table);
-                dataGridView1.DataSource = table;
-                mycon.Close();
+                
+                dataGridView1.DataSource = House.newHouse();
                 table_load();
                 settingsShow();
             }
@@ -160,12 +130,7 @@ namespace House
             DialogResult dialogResult = MessageBox.Show("Вы действительно хотите удалить запись c id = "+delete, "Удаление", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                string request = "DELETE FROM house WHERE id =" + delete + ";";
-                mycon = new MySqlConnection(constr);
-                mycon.Open();
-                mycom = new MySqlCommand(request, mycon);
-                mycom.ExecuteNonQuery();
-                mycon.Close();
+                House.deleteOwner(delete);
                 table_load();
             }
             
@@ -173,16 +138,8 @@ namespace House
         }
         private void table_load()
         {
-            string request;
-            try { 
-                request = "SELECT * from house";
-                mycon = new MySqlConnection(constr);
-                mycon.Open();
-                MySqlDataAdapter ms_data = new MySqlDataAdapter(request, constr);
-                DataTable table = new DataTable();
-                ms_data.Fill(table);
-                dataGridView1.DataSource = table;
-                mycon.Close();
+            try {
+                dataGridView1.DataSource = House.getOwners();
                 dataGridView1.Columns[0].HeaderText = "ID";
                 dataGridView1.Columns[1].HeaderText = "Фамилия";
                 dataGridView1.Columns[2].HeaderText = "Имя";
@@ -202,7 +159,7 @@ namespace House
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2(constr,"insert");
+            Form2 form2 = new Form2("insert");
             form2.ShowDialog();
             table_load();
         }
@@ -212,14 +169,9 @@ namespace House
 
             try
              {
-                 string request = "DROP DATABASE HOUSE";
-                 mycon = new MySqlConnection(constr);
-                 mycon.Open();
-                 mycom = new MySqlCommand(request, mycon);
-                 mycom.ExecuteNonQuery();
-                 mycon.Close();
-                 dataGridView1.DataSource = null;
-                 settingsHide();
+                House.deleteHouse();
+                dataGridView1.DataSource = null;
+                settingsHide();
              }
              catch
              {
@@ -234,24 +186,18 @@ namespace House
         }
         private void button8_Click(object sender, EventArgs e)
         {
-            string request = "SELECT * FROM house ORDER BY "+this.checked_column;
-            mycon = new MySqlConnection(constr);
-            mycon.Open();
-            mycom = new MySqlCommand(request, mycon);
-            mycom.ExecuteNonQuery();
-            mycon.Close();
 
         }
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
-            RadioButton radioBtn = (RadioButton)sender;
-            this.checked_column = radioBtn.Text;
+            /*RadioButton radioBtn = (RadioButton)sender;
+            this.checked_column = radioBtn.Text;*/
         }
         private void button6_Click(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count == 1) { MessageBox.Show("В базе данных нет записей"); return; }
             int id = Convert.ToInt32(dataGridView1[0, dataGridView1.SelectedCells[0].RowIndex].Value);
-            Form2 form2 = new Form2(constr,"update",id);
+            Form2 form2 = new Form2("update",id);
             form2.ShowDialog();
             table_load();
         }
@@ -263,7 +209,7 @@ namespace House
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2(constr, "search");
+            Form2 form2 = new Form2( "search");
             form2.ShowDialog();
             int rowIndex = -1;
             if (form2.getId() != -1)
@@ -295,13 +241,11 @@ namespace House
 
         private void button9_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2(constr, "filter");
+            Form2 form2 = new Form2("filter");
             form2.ShowDialog();
             if(form2.filter_data != null)
             {
-                DataTable table = new DataTable();
-                form2.filter_data.Fill(table);
-                dataGridView1.DataSource = table;
+                dataGridView1.DataSource = form2.filter_data;
             }
             
         }
@@ -326,20 +270,15 @@ namespace House
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            mycon = new MySqlConnection(constr);
-            mycon.Open();
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.Connection = mycon;
-            MySqlBackup mb = new MySqlBackup(cmd);
+
             FolderBrowserDialog fbd = new FolderBrowserDialog();
+            MySqlBackup mb = House.saveHouseData(); 
             if (fbd.ShowDialog() == DialogResult.OK)
             {
                 if(fbd.SelectedPath.Substring(fbd.SelectedPath.Length - 2) == "\\") { fbd.SelectedPath = fbd.SelectedPath.Substring(0, fbd.SelectedPath.Length - 2); }
                 mb.ExportToFile(fbd.SelectedPath+"\\house.sql");
                 MessageBox.Show("Файл успешно сохранен");
             }
-            
-            mycon.Close();
         }
     }
 }

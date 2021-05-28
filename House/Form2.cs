@@ -15,50 +15,35 @@ namespace House
     {
         private String task;
         private int id;
-        private string constr;
-        private MySqlConnection mycon;
-        private MySqlCommand mycom;
-        private DataSet ds;
-        public MySqlDataAdapter filter_data;
+        public DataTable filter_data;
         public int getId()
         {
             return this.id;
         }
-        public Form2(String constr,String task, int ident)
+        public Form2(String task, int ident)
         {
             
-            this.constr = constr;
             InitializeComponent();
             comboboxesHide();
             this.Text = "Изменение записи id = " + ident;
             this.id = ident;
             this.task = task;
-            string request = "SELECT * FROM house WHERE ID = " + ident;
-            mycon = new MySqlConnection(constr);
-            mycon.Open();
-            mycom = new MySqlCommand(request, mycon);
-            MySqlDataReader reader = mycom.ExecuteReader();
-            while (reader.Read())
-            {
-                textBox1.Text = reader[1].ToString();
-                textBox2.Text = reader[2].ToString();
-                textBox3.Text = reader[3].ToString();
-                textBox4.Text = reader[4].ToString();
-                textBox5.Text = reader[5].ToString();
-                textBox6.Text = reader[6].ToString();
-                textBox7.Text = reader[7].ToString();
-                textBox8.Text = reader[8].ToString();
-                textBox9.Text = reader[9].ToString();
-            }
-            reader.Close();
-            mycon.Close();
+            string[] data = House.takeOwner(ident);
+            textBox1.Text = data[0];
+            textBox2.Text = data[1];
+            textBox3.Text = data[2];
+            textBox4.Text = data[3];
+            textBox5.Text = data[4];
+            textBox6.Text = data[5];
+            textBox7.Text = data[6];
+            textBox8.Text = data[7];
+            textBox9.Text = data[8];
             button1.Text = "Изменить запись";
 
         }
-        public Form2(String constr,String task)
+        public Form2(String task)
         {
             
-            this.constr = constr;
             this.task = task;
             InitializeComponent();
 
@@ -113,53 +98,28 @@ namespace House
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string surname, name, patronymic,profit, Rent, Enegry, Utilities, Heat, Water;
-            surname = textBox1.Text;
-            name = textBox2.Text;
-            patronymic = textBox3.Text;
-            profit = textBox4.Text;
-            Rent = textBox5.Text;
-            Enegry = textBox6.Text;
-            Utilities = textBox7.Text;
-            Heat = textBox8.Text;
-            Water = textBox9.Text;
-            mycon = new MySqlConnection(constr);
-            mycon.Open();
+
+            string[] data = { textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, textBox8.Text, textBox9.Text};
             try { 
-                string request = "";
                 switch (task)
                 {
                     case "insert":
-                        request = String.Format("INSERT INTO house (surname,name,patronymic,profit,Rent,Enegry,Utilities,Heat,Water) VALUES ('{0}', '{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}')", surname, name, patronymic, profit, Rent, Enegry, Utilities, Heat, Water);
-                        mycom = new MySqlCommand(request, mycon);
-                        mycom.ExecuteNonQuery();
+                        House.insertOwner(data);
                         break;
                     case "update":
-                        request = String.Format("UPDATE house SET surname = {0},name = {1},patronymic = {2},profit = {3},Rent = {4},Enegry = {5},Utilities = {6},Heat = {7},Water = {8} WHERE ID =" + this.id, surname, name, patronymic, profit, Rent, Enegry, Utilities, Heat, Water);
-                        mycom = new MySqlCommand(request, mycon);
-                        mycom.ExecuteNonQuery();
+                        House.updateOwner(data,this.id);
                         break;
                     case "filter":
-                        request = String.Format("SELECT * from house WHERE" + (surname == "" ? "" : " surname = '{0}' AND") + (name == "" ? "" : " name = '{1}' AND") + (patronymic == "" ? "" : " patronymic = '{2}' AND") + (profit == "" ? "" : " profit "+ (comboBox1.SelectedItem == "ANY" ? "=" : comboBox1.SelectedItem) + " {3} AND") + (Rent == "" ? "" : " Rent " + (comboBox2.SelectedItem == "ANY" ? "=" : comboBox2.SelectedItem) + " {4} AND") + (Enegry == "" ? "" : " Enegry " + (comboBox3.SelectedItem == "ANY" ? "=" : comboBox3.SelectedItem) + " {5} AND") + (Utilities == "" ? "" : " Utilities " + (comboBox4.SelectedItem == "ANY" ? "=" : comboBox4.SelectedItem) + " {6} AND") + (Heat == "" ? "" : " Heat " + (comboBox5.SelectedItem == "ANY" ? "=" : comboBox5.SelectedItem) + " {7} AND") + (Water == "" ? "" : " Water " + (comboBox6.SelectedItem == "ANY" ? "=" : comboBox6.SelectedItem) + " {8} AND"), surname, name, patronymic, profit, Rent, Enegry, Utilities, Heat, Water);
-                        request = request.Substring(0, request.Length - 3);
-                        filter_data = new MySqlDataAdapter(request, constr);
+                        string[] filters = { comboBox1.SelectedItem.ToString(), comboBox2.SelectedItem.ToString(), comboBox3.SelectedItem.ToString(), comboBox4.SelectedItem.ToString(), comboBox5.SelectedItem.ToString(), comboBox6.SelectedItem.ToString() };
+                        filter_data = House.filterOwners(data, filters);
                         break;
                     case "search":
-                        request = String.Format("SELECT id from house WHERE" + (surname == "" ? "" : " surname = '{0}' AND") + (name == "" ? "" : " name = '{1}' AND") + (patronymic == "" ? "" : " patronymic = '{2}' AND") + (profit == "" ? "" : " profit = {3} AND") + (Rent == "" ? "" : " Rent = {4} AND") + (Enegry == "" ? "" : " Enegry = {5} AND") + (Utilities == "" ? "" : " Utilities = {6} AND") + (Heat == "" ? "" : " Heat = {7} AND") + (Water == "" ? "" : " Water = {8} AND"), surname, name, patronymic, profit, Rent, Enegry, Utilities, Heat, Water);
-                        request = request.Substring(0, request.Length - 3);
-                        mycom = new MySqlCommand(request, mycon);
-                        MySqlDataReader reader = mycom.ExecuteReader();
-                        if (reader.Read())
-                        {
-                            this.id = (int)reader[0];
-                        }
-                        reader.Close();
+                        this.id = House.searchOwner(data);
                         break;
                 }
-                mycon.Close();
             }
             
-            catch
+                catch
             {
                 MessageBox.Show("Database connection lost");  
             }

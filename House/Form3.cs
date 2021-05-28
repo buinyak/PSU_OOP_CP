@@ -31,15 +31,15 @@ namespace House
                 MySqlConnection con = new MySqlConnection(constr);
                 con.Open();
                 con.Close();
+                this.Hide();
+                Form1 form1 = new Form1(constr);
+                form1.ShowDialog();
+                this.Close();
             }
             catch
             {
                 MessageBox.Show("Ошибка подключения");
             }
-            this.Hide();
-            Form1 form1 = new Form1(constr);
-            form1.ShowDialog();
-            this.Close();
         }
     }
 }

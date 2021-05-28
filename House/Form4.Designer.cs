@@ -66,6 +66,7 @@
             this.label3.Size = new System.Drawing.Size(289, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "студент группы 19ВП2 Буйняков Г.Э.";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
